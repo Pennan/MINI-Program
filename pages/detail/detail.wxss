@@ -1,0 +1,81 @@
+/* pages/detail/detail.wxss */
+.detailContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.headImg {
+  width: 100%;
+  height: 480rpx;
+}
+
+.avatar_name_date {
+  padding: 10rpx;
+}
+
+.avatar_name_date image {
+  width: 64rpx;
+  height: 64rpx;
+  vertical-align: middle; /* 用于图片和文本居中对齐 */
+}
+
+.avatar_name_date text {
+  font-size: 28rpx;
+  margin-left: 10rpx;
+}
+
+.title {
+  font-size: 32rpx;
+  font-weight: bold;
+  margin-left: 10rpx;
+}
+
+.collection_share_container {
+  /* 这里需要开启相对定位, 不能是绝对定位，否者会相对于屏幕左上角定位, 而不是在指定位置. */
+  position: relative;
+}
+
+.collection_share {
+  float: right; /* 设置该组件内的元素向右浮动 */
+  margin-right: 40rpx;
+}
+
+.collection_share image {
+  width: 90rpx;
+  height: 90rpx;
+  margin-left: 20rpx;
+}
+
+.line {
+  width: 90%;
+  height: 1rpx;
+  background: #ff0;
+  /* 绝对定位：相对于第一个开启定位的祖先元素，这里是 collection_share_container 元素，否者相对于屏幕左上角.  */
+  position: absolute; 
+  /* 绝对定位的 top、left等操作是相对于第一个开启定位的祖先元素进行操作的。 */
+  top: 45rpx;
+  left: 5%;
+  z-index: -1; /* 将层级降低，可以定位在其他元素下面. */
+}
+
+/* 这里为什么会居中显示, 是因为 button 有默认的样式, 自定义的样式可以覆盖默认样式. */
+button {
+  width: 280rpx;
+  height: 80rpx;
+  font-size: 32rpx;
+}
+
+.content {
+  font-size: 32rpx;
+  text-indent: 32rpx; /* 缩进一个字的距离. */
+  margin-top: 10rpx;
+}
+
+.music {
+  width: 60rpx;
+  height: 60rpx;
+  position: absolute;
+  top: 200rpx;
+  left: 50%;
+  margin-left: -30rpx;
+}

@@ -1,0 +1,14 @@
+<!--pages/movies/movies.wxml-->
+<!-- 可以通过 navigator 组件替代 wx.navigateTo() 方法， 更加便捷. -->
+<navigator url='/pages/movieDetail/movieDetail?index={{index}}' 
+  wx:for='{{ moviesArr }}' wx:key='{{ index }}'>
+  <view class='moviesContainer'>
+    <image src='{{ item.images.large }}'></image>
+    <view class='movies_info'>
+      <text class='movies_name'>{{ item.original_title }}</text>
+      <text class='movies_years'>年份：{{ item.year }}</text>
+      <text class='movies_director'>导演：{{ item.directors[0].name }}</text>
+    </view>
+    <text class='movies_score'>{{ item.rating.average }}</text>
+  </view>
+</navigator>

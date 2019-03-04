@@ -1,0 +1,22 @@
+<!--pages/detail/detail.wxml-->
+<view class='detailContainer'>
+  <image class='headImg' src='{{ isMusicPlay ? detailObj.music.coverImgUrl : detailObj.detail_img }}'></image>
+  <image bindtap='handleMusicPlay' class='music' src='{{ isMusicPlay ? "/images/music/music-stop.png" : "/images/music/music-start.png" }}'></image>
+  <view class='avatar_name_date'>
+    <image src='{{ detailObj.avatar }}'></image>
+    <text>{{ detailObj.author }}</text>
+    <text>发布于</text>
+    <text>{{ detailObj.date }}</text>
+  </view>
+  <text class='title'>{{ detailObj.title }}</text>
+  <view class='collection_share_container'>
+    <view class='collection_share'>
+      <image bindtap='handleCollection' src='{{isCollected?"/images/icon/collection.png" : "/images/icon/collection-anti.png"}}'></image>
+      <image bindtap='bandleShare' src='/images/icon/share.png'></image>
+    </view>
+    <view class='line'></view>
+  </view>
+  <!-- 通过设置 open-type 的值为 share, 触发用户转发功能. -->
+  <button open-type='share'>转发此文章</button>
+  <text class='content'>{{ detailObj.detail_content }}</text>
+</view>

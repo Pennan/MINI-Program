@@ -1,0 +1,43 @@
+<!--pages/list/list.wxml-->
+<!-- 将 模板 结构导入改结构 -->
+<import src='/pages/template/list-temp.wxml'/>
+<view>
+  <!-- 如果是 boolean 属性，则可以简写表示 true -->
+  <!-- 
+    我们可以通过 catchtap 属性捕获子元素的点击事件，子元素传递的数据同样可以通过
+    data-参数 传递，这样点击了以后参数将存放在 event 的 target 中，而是不会
+    currentTarget 中，这里需要区分 target 和 currentTarget 的区别，target 中存放的是
+    父元素捕获子元素传入的参数，而 currentTarget 存的是触发元素传入时的参数。
+  -->
+  <swiper catchtap='swiperGoDetail' indicator-dots indicator-color="white" indicator-active-color="pink" autoplay>
+    <swiper-item>
+      <image data-index='1' src='/images/detail/carousel/01.jpg'></image>
+    </swiper-item>
+    <swiper-item>
+      <image data-index='0' src='/images/detail/carousel/02.jpg'></image>
+    </swiper-item>
+    <swiper-item>
+      <image data-index='2' src='/images/detail/carousel/03.jpg'></image>
+    </swiper-item>
+    <swiper-item>
+      <image data-index='3' src='/images/detail/carousel/04.jpg'></image>
+    </swiper-item>
+  </swiper>
+  <!-- 
+    使用 wx:for 的形式渲染列表, 会默认生成 index 和 item 属性.
+    遍历的列表最好每个都添加一个 wx:key 的属性唯一标示, 为了提升性能, 否者将会有警告.
+   -->
+  <block wx:for='{{ listArr }}' wx:key='{{ index }}'>
+    <!-- 
+      为每个列表项添加一个点击事件, 同时可以通过 data-参数 的形式将数据传入 event 事件中
+     -->
+    <view bindtap='goDetailPage' data-index='{{ index }}'>
+      <!-- 传参:
+        以 三点运算符 的方式将 item 对象解构并传入模板中.
+        这样在模板结构中就不需要使用 item.xxx 的方式使用数据了, 可以直接使用 xxx 表示.
+       -->
+      <template is='list-temp' data='{{ ...item }}' />
+    </view>
+  </block>
+  
+</view>

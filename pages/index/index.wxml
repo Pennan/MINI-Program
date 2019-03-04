@@ -1,0 +1,14 @@
+<!--pages/index/index.wxml-->
+<view class='indexContainer'>
+  <image class='avatar' src='{{ userInfo.avatarUrl }}'></image>
+  <!-- 
+    需要用户手动点击之后才能弹出授权请求框，
+    bindgetuserinfo 回调可以检测是否已经授权.
+  -->
+  <button style='display: {{ isShow ? "block" : "none" }}' bindgetuserinfo='getBindUserInfo' 
+  open-type='getUserInfo'>获取用户信息</button>
+  <text class='username'>Hello {{ userInfo.nickName }}</text>
+  <view class='goStudy' bindtap='goListPage'>
+    <text>开启小程序之旅</text>
+  </view>
+</view>

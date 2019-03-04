@@ -1,0 +1,12 @@
+/* pages/list/list.wxss */
+/* 将 模板 样式导入 list 样式<注意在结构中导入和在样式中导入的方式不一样.> */
+@import '/pages/template/list-temp.wxss';
+swiper {
+  width: 100%;
+  height: 400rpx;
+}
+
+swiper swiper-item image {
+  width: 100%;
+  height: 400rpx;
+}

@@ -1,0 +1,36 @@
+/* pages/movieDetail/movieDetail.wxss */
+.movieDetailContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.movie_img {
+  width: 70%;
+  height: 700rpx;
+  margin-left: 15%;
+  margin-top: 50rpx;
+  margin-bottom: 20rpx;
+}
+
+.movie_info {
+  display: flex;
+  flex-direction: column;
+  margin-left: 18%;
+  font-size: 32rpx;
+}
+
+.movie_title {
+  font-size: 40rpx;
+  font-weight: bold;
+  margin-bottom: 20rpx;
+}
+
+button {
+  width: 70%;
+  height: 80rpx;
+  line-height: 80rpx;
+  background: green;
+  color: #fff;
+  font-size: 32rpx;
+  margin-top: 20rpx;
+}
